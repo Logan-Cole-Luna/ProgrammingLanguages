@@ -2,15 +2,29 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
+            "name": "arr_swap",
+            "request": "launch",
+            "mainClass": "arr_swap",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",  // Point to the compiled file
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": true,  // Set this to true
+            "externalConsole": true,
             "MIMode": "lldb",
             "preLaunchTask": "build active file"
         }

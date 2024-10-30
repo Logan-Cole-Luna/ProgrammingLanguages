@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+void increaseValue(int a); // Prototype declaration
+
+
 int main(){
 
     printf("\nHello world");
