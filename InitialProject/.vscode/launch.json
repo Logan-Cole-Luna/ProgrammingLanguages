@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "element_array",
+            "request": "launch",
+            "mainClass": "element_array",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
+            "name": "Tree",
+            "request": "launch",
+            "mainClass": "Tree",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
+            "name": "GfG",
+            "request": "launch",
+            "mainClass": "GfG",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
+            "name": "threads",
+            "request": "launch",
+            "mainClass": "threads",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
+            "name": "Threads",
+            "request": "launch",
+            "mainClass": "Threads",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",

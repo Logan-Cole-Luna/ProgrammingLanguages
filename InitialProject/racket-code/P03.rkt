@@ -4,23 +4,12 @@
 ;first given atom in the list with the second given atom, no matter how deeply the first atom is
 ;nested.
 
-;2. Write a function that takes two two-dimensional (2D) points and returns the distance between
-;them. A point will have its x, and y value.
-
-;3. Complete the following function by implementing the reverse function. Test your implementation
-;of the reverse function by checking if a list is a palindrome.
-
-
-;1. Write a function that takes two atoms and a list as parameters and replaces all occurrences of the
-;first given atom in the list with the second given atom, no matter how deeply the first atom is
-;nested.
-
 (define (replace l a1 a2)
   (cond
-    ; If the list is empty, return it as-is
+    ; If the list is empty, return
     [(null? l) '()]
 
-    ; If the current element is a list, recursively process it
+    ; If the current element is a list, recurse
     [(list? (car l))
         (cons (replace (car l) a1 a2) (replace (cdr l) a1 a2))]
 
@@ -33,13 +22,11 @@
         (cons (car l) (replace (cdr l) a1 a2))]))
 
 ; first element, l, is input list
-; sexond element, key, is element being searched for
-; Test cases:
-(replace '(1 2 (3 4 (5 1)) 6 1) 1 99)
-; Output: '(99 2 (3 4 (5 99)) 6 99)
-
-(replace '(a (b c (d a)) e f) 'a 'x)
-; Output: '(x (b c (d x)) e f)
+; sexond element, a1, is element being searched for
+; third element, a2, is element being replaced with
+(replace '(1 2 (3 4 (5 1)) 6 1) 1 99)     ; Output: '(99 2 (3 4 (5 99)) 6 99)
+(replace '(a (b c (d a)) e f) 'a 'x)      ; Output: '(x (b c (d x)) e f)
+(replace '() 'a 'x)             ; Output: '()
 
 
 ;2. Write a function that takes two two-dimensional (2D) points and returns the distance between
@@ -53,14 +40,14 @@
             (sqr (- (first p2) (first p1))) 
             (sqr (- (second p2) (second p1))))))
 
-; first element, l, is input list
-; sexond element, key, is element being searched for
-; Test cases:
-(distance '(1 2) '(2 2))
-(distance '(2 3) '(4 55))
+; first element, p1, is first point
+; second element, p2, is second point
+(distance '(1 2) '(2 2)) ; 1.0
+(distance '(2 3) '(4 55)) ; 52.20153254455275
 (distance '(3 4) '(6 8)) ; 5.0
 (distance '(1 1) '(4 5)) ; 5.0
 (distance '(0 0) '(3 4)) ; 5.0
+(distance '(0 0) '(0 0)) ; 0.0
 
 ;3. Complete the following function by implementing the reverse function. Test your implementation
 ;of the reverse function by checking if a list is a palindrome.
@@ -69,19 +56,24 @@
   (lambda (lst)
     (define (helper stack acc)
       (cond
-        ; If the stack is empty, return the accumulated reversed list
+        ; If the stack is empty, return accumulated reversed list
         [(null? stack) acc]
 
-        ; Otherwise, move the first element of the stack to the accumulator
+        ; Otherwise, move the first element of stack to the acc
         [else
          (helper (cdr stack) (cons (car stack) acc))]))
-    ; Call the helper with the original list and an empty accumulator
+    ; Initialize helper
     (helper lst '())))
 
 (define (isPalindrome lst)
   (equal? lst (reverseRecursion lst)))
 
+; first element, lst, is the list to be reversed
 (displayln (reverseRecursion '(1 2 3 4 5)))       ; Output: '(5 4 3 2 1)
 (displayln (reverseRecursion '(1 2 3 2 1)))       ; Output: '(1 2 3 2 1)
+(displayln (reverseRecursion '(1 2 3 4 5 6 7 8 9 8 7 6 4 5 6 7 8 9)))        ; Output: '(9 8 7 6 5 4 6 7 8 9 8 7 6 5 4 3 2 1)
+(displayln (reverseRecursion '(a b c d)))  ; Output: '(d c b a) 
 (displayln (isPalindrome '(1 2 3 2 1)))           ; Output: #t
+(displayln (isPalindrome '(1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1)))  ; Output: #t
 (displayln (isPalindrome '(1 2 3 4 5)))           ; Output: #f
+(displayln (isPalindrome '(a b c d c b a)))  ; Output: #f

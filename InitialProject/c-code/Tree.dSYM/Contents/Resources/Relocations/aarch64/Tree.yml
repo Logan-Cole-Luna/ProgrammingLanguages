@@ -1,0 +1,10 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/loganlambeth/VSCode/CS332/ProgrammingLanguages/InitialProject/c-code/Tree'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: __Z7newNodei, symObjAddr: 0x0, symBinAddr: 0x100003CAC, symSize: 0x48 }
+  - { offsetInCU: 0x7B, offset: 0x7B, size: 0x8, addend: 0x0, symName: __Z7newNodei, symObjAddr: 0x0, symBinAddr: 0x100003CAC, symSize: 0x48 }
+  - { offsetInCU: 0xB5, offset: 0xB5, size: 0x8, addend: 0x0, symName: __Z6insertP4Nodei, symObjAddr: 0x48, symBinAddr: 0x100003CF4, symSize: 0xC8 }
+  - { offsetInCU: 0xEF, offset: 0xEF, size: 0x8, addend: 0x0, symName: __Z6searchP4Nodei, symObjAddr: 0x110, symBinAddr: 0x100003DBC, symSize: 0xDC }
+  - { offsetInCU: 0x133, offset: 0x133, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1EC, symBinAddr: 0x100003E98, symSize: 0xE0 }
+...
