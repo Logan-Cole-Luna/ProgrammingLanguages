@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Log",
+            "request": "launch",
+            "mainClass": "Log",
+            "projectName": "InitialProject_994c416b"
+        },
+        {
+            "type": "java",
             "name": "element_array",
             "request": "launch",
             "mainClass": "element_array",

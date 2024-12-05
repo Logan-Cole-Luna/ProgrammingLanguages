@@ -38,6 +38,7 @@
     (cond
         ; Base cases
         [(null? tree) #f]
+        ; if found
         [(= value (first tree)) #t]
 
         ; Iterate tree
@@ -49,9 +50,24 @@
             (binary-search-tree (third tree) value)]
         ))
 
-
-
 ; Test cases
 (binary-search-tree create-tree 3) ; #t
 (binary-search-tree create-tree 8) ; #f
-(binary-search-tree '() 3) ; #f
+(binary-search-tree '(2 
+                        (1 '() '()) 
+                        (3 '() '())) 
+                        3) ; #t
+(binary-search-tree '(8 
+                      (4 
+                        (2 
+                          (1 '() '()) 
+                          '())
+                        (6 
+                          '()
+                          (7 '() '())))
+                      (12
+                        (10 '() '())
+                        (14 '() '()))) 
+                        7) ; #t
+(binary-search-tree '() 2) ; #f
+(binary-search-tree '(4 '() (6 '() '())) 6) ; #t
