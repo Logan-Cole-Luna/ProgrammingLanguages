@@ -53,5 +53,6 @@ public class Log {
         } catch (NumberFormatException e) {
             // Default case if thread name is not number, consider it an errot
             return "ERROR"; 
+        }
     }
 }
